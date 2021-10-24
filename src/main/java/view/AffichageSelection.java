@@ -43,8 +43,18 @@ public class AffichageSelection extends AffichageService {
 	 * Construction de l'affichage.
 	 */
 	public void builder() {
-		menuString.append(HEADER_1).append(HEADER_2).append(BORDER).append(SPACE).append(CHOIX_1).append(CHOIX_2)
-				.append(CHOIX_3).append(CHOIX_4).append(CHOIX_5).append(SPACE).append(QUITER).append(BORDER);
+		menuString.append(HEADER_1)
+		.append(HEADER_2)
+		.append(BORDER)
+		.append(SPACE)
+		.append(CHOIX_1)
+		.append(CHOIX_2)
+		.append(CHOIX_3)
+		.append(CHOIX_4)
+		.append(CHOIX_5)
+		.append(SPACE)
+		.append(QUITER)
+		.append(BORDER);
 	}
 
 }

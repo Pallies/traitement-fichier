@@ -21,11 +21,11 @@ public class SelectionMenu extends MenuService {
 		switch (key) {
 		case 1:
 //			"| - 1. Rechercher les meilleurs produits ( nutriScore A )
-			viewSelection.affichageList(list.selectionByNutriScoreA(AffichageService.NB_PRODUIT_AFF));
+			viewSelection.affichageList(list.selectionByNutriScoreA(AffichageService.NB_PRODUIT_A_AFFICHER));
 			break;
 		case 2:
 //			"| - 2. Rechercher les produits à éviter  ( nutriScore F )
-			viewSelection.affichageList(list.selectionByNutriScoreF(AffichageService.NB_PRODUIT_AFF));
+			viewSelection.affichageList(list.selectionByNutriScoreF(AffichageService.NB_PRODUIT_A_AFFICHER));
 			break;
 		case 3:
 //			"| - 3. Rechercher les plus Allergissants
@@ -39,12 +39,6 @@ public class SelectionMenu extends MenuService {
 		default:
 			break;
 		}
-		key=0;
-	}
-
-	@Override
-	public void affichageMenu() {
-		viewSelection = new AffichageSelection();
 	}
 
 	public ProduitService getList() {
@@ -53,6 +47,32 @@ public class SelectionMenu extends MenuService {
 
 	public void setList(ProduitService list) {
 		this.list = list;
+	}
+
+	/**
+	 * Affichage menu.
+	 */
+	@Override
+	public void affichageMenu() {
+		viewSelection = new AffichageSelection();
+	}
+
+	/**
+	 * Affichage erreur.
+	 */
+	@Override
+	public void affichageErreur() {
+		viewSelection.affichageErreur();
+	}
+
+	/**
+	 * Affichage erreur.
+	 *
+	 * @param max the max
+	 */
+	@Override
+	public void affichageErreur(int max) {
+		viewSelection.affichageErreur(max);
 	}
 
 }

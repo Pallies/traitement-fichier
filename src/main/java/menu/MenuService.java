@@ -5,6 +5,8 @@ import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
+import view.AffichageService;
+
 /**
  * The Class MenuService.
  */
@@ -16,34 +18,34 @@ public abstract class MenuService {
 	 * @param scanner the scanner
 	 */
 	public void traiter(Scanner scanner) {
-		Integer key = null;
+		int key = Integer.MAX_VALUE;
 		do {
 			affichageMenu();
 			try {
 				key = scanner.nextInt();
 				choixUser(scanner, key);
 			} catch (InputMismatchException e) {
-				
+				affichageErreur();
 			}
 			scanner.nextLine();
 //			Retour au menu pricipal
 			if (this instanceof SelectionMenu)
 				break;
-		} while (true);
+		} while (key != 0);
 
 	}
 
 	public String traitement(Scanner scanner, Map<Integer, String> map) {
-		int key = 0;
 		int limit = map.size();
+		int key = limit + 1;
 		do {
 			try {
 				key = scanner.nextInt();
 			} catch (InputMismatchException e) {
-//				THROWS EXCEPTION
+				affichageErreur(limit);
 			}
-
-		} while (key < 0 && key > limit);
+			scanner.nextLine();
+		} while (key < 0 || key > limit);
 
 		return map.get(key);
 	}
@@ -58,5 +60,9 @@ public abstract class MenuService {
 	public abstract void choixUser(Scanner scanner, int key);
 
 	public abstract void affichageMenu();
+
+	public abstract void affichageErreur();
+
+	public abstract void affichageErreur(int max);
 
 }

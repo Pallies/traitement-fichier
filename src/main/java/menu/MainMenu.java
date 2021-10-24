@@ -16,7 +16,6 @@ public class MainMenu extends MenuService {
 
 	private AffichageService viewMain;
 
-
 	@Override
 	public void choixUser(Scanner scanner, int key) {
 
@@ -51,9 +50,31 @@ public class MainMenu extends MenuService {
 		}
 	}
 
+	/**
+	 * Affichage menu.
+	 */
 	@Override
 	public void affichageMenu() {
 		viewMain = new AffichageMain();
+	}
+
+	/**
+	 * Affichage erreur.
+	 * pour la méthode traiter du menuService
+	 */
+	@Override
+	public void affichageErreur() {
+		viewMain.affichageErreur();
+	}
+
+	/**
+	 * Affichage erreur.
+	 * pour la méthode traitement du menuService
+	 * @param max the max
+	 */
+	@Override
+	public void affichageErreur(int max) {
+		viewMain.affichageErreur(max);
 	}
 
 }
