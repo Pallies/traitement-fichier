@@ -1,11 +1,9 @@
 package menu;
 
-import java.util.List;
 import java.util.Scanner;
 
 import models.Categorie;
 import models.Marque;
-
 import services.CategorieProduit;
 import services.MarqueCategorieProduit;
 import services.MarqueProduit;
@@ -18,9 +16,6 @@ public class MainMenu extends MenuService {
 
 	private AffichageService viewMain;
 
-	public MainMenu() {
-		super();
-	}
 
 	@Override
 	public void choixUser(Scanner scanner, int key) {

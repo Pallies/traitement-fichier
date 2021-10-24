@@ -16,20 +16,20 @@ public abstract class MenuService {
 	 * @param scanner the scanner
 	 */
 	public void traiter(Scanner scanner) {
-		int key = Integer.MAX_VALUE;
+		Integer key = null;
 		do {
 			affichageMenu();
 			try {
 				key = scanner.nextInt();
-
+				choixUser(scanner, key);
 			} catch (InputMismatchException e) {
-//				THROWS EXCEPTION
+				
 			}
-			choixUser(scanner, key);
+			scanner.nextLine();
 //			Retour au menu pricipal
 			if (this instanceof SelectionMenu)
 				break;
-		} while (key != 0);
+		} while (true);
 
 	}
 
@@ -39,7 +39,6 @@ public abstract class MenuService {
 		do {
 			try {
 				key = scanner.nextInt();
-
 			} catch (InputMismatchException e) {
 //				THROWS EXCEPTION
 			}

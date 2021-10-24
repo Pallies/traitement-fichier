@@ -15,8 +15,10 @@ public class ApplicationOpenFoodFacts {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		
 		MainMenu menu = new MainMenu();
+		Scanner scanner = new Scanner(System.in);
+		
 		menu.traiter(scanner);
 	}
 
