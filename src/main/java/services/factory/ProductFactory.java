@@ -3,12 +3,10 @@ package services.factory;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Additif;
-import models.Allergene;
 import models.Attributs;
 import models.Categorie;
+import models.Descriptif;
 import models.Element;
-import models.Ingredient;
 import models.Marque;
 import models.Produit;
 
@@ -41,9 +39,9 @@ public class ProductFactory implements Services<List<String>, Produit> {
 	public Produit builder(List<String> dataFormat) {
 
 		
-		List<Ingredient> ingredients = new ArrayList<Ingredient>();
-		List<Allergene> allergenes = new ArrayList<Allergene>();
-		List<Additif> additifs = new ArrayList<Additif>();
+		List<Descriptif> ingredients = new ArrayList<>();
+		List<Descriptif> allergenes = new ArrayList<>();
+		List<Descriptif> additifs = new ArrayList<>();
 		
 		int index = 0;// index pour le débutde ligne
 		int indexEnd = Attributs.values().length; // index du rang limit d'attribut

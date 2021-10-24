@@ -2,52 +2,53 @@ package models;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import utils.FormatTo;
 
 /**
  * The Class Produit.
  */
-public class Produit  {
+public class Produit {
 
-	/**  Categorie du poduit. */
+	/** Categorie du poduit. */
 	private Categorie categorie;
-	
-	/**  Marque du produit. */
+
+	/** Marque du produit. */
 	private Marque marque;
-	
-	/**  nom du produit. */
+
+	/** nom du produit. */
 	private String nom;
-	
-	/**  nutri Score note de A<->F. */
+
+	/** nutri Score note de A<->F. */
 	private String nutritionGradeFr;
-	
-	/**  ingrédients dans le produit. */
-	private List<Ingredient> ingredients;
-	
-	/**  quantité pour chaque élement pour 100g. */
+
+	/** ingrédients dans le produit. */
+	private List<Descriptif> ingredients;
+
+	/** quantité pour chaque élement pour 100g. */
 	private List<Element> elements;
-	
-	/**  list d'allergenes. */
-	private List<Allergene> allergenes;
-	
-	/**  list d'additifs. */
-	private List<Additif> additifs;
+
+	/** list d'allergenes. */
+	private List<Descriptif> allergenes;
+
+	/** list d'additifs. */
+	private List<Descriptif> additifs;
 
 	/**
 	 * #Constructor.
 	 *
-	 * @param categorie the categorie
-	 * @param marque the marque
-	 * @param nom the nom
+	 * @param categorie        the categorie
+	 * @param marque           the marque
+	 * @param nom              the nom
 	 * @param nutritionGradeFr the nutrition grade fr
-	 * @param ingredients the ingredients
-	 * @param elements the elements
-	 * @param allergenes the allergenes
-	 * @param additifs the additifs
+	 * @param ingredients      the ingredients
+	 * @param elements         the elements
+	 * @param allergenes       the allergenes
+	 * @param additifs         the additifs
 	 */
 	public Produit(Categorie categorie, Marque marque, String nom, String nutritionGradeFr,
-			List<Ingredient> ingredients, List<Element> elements, List<Allergene> allergenes, List<Additif> additifs) {
+			List<Descriptif> ingredients, List<Element> elements, List<Descriptif> allergenes, List<Descriptif> additifs) {
 		this.categorie = categorie;
 		this.marque = marque;
 		this.nom = FormatTo.nom(nom);
@@ -58,6 +59,11 @@ public class Produit  {
 		this.additifs = additifs;
 	}
 
+	public  String joiningCollection(List<Descriptif> list) {
+		return list.stream().map(Descriptif::getNom).collect(Collectors.joining("\n "));
+	}
+
+	
 	/**
 	 * Getter.
 	 *
@@ -108,7 +114,7 @@ public class Produit  {
 	 *
 	 * @return the ingredients
 	 */
-	public List<Ingredient> getIngredients() {
+	public List<Descriptif> getIngredients() {
 		return ingredients;
 	}
 
@@ -117,7 +123,7 @@ public class Produit  {
 	 *
 	 * @return the allergenes
 	 */
-	public List<Allergene> getAllergenes() {
+	public List<Descriptif> getAllergenes() {
 		return allergenes;
 	}
 
@@ -126,7 +132,7 @@ public class Produit  {
 	 *
 	 * @return the additifs
 	 */
-	public List<Additif> getAdditifs() {
+	public List<Descriptif> getAdditifs() {
 		return additifs;
 	}
 
@@ -138,9 +144,15 @@ public class Produit  {
 	@Override
 	public String toString() {
 		StringBuilder produitString = new StringBuilder();
-		produitString.append(getNom()).append("\n").append(getMarque()).append("\n").append(getCategorie()).append("\n")
-				.append(getNutritionGradeFr()).append("\n").append(getIngredients()).append("\n").append(getElements())
-				.append("\n").append(getAdditifs()).append("\n").append(getAllergenes());
+		produitString
+		.append(getNom()).append("\n")
+		.append(getMarque()).append("\n")
+		.append(getCategorie()).append("\n")
+		.append(getNutritionGradeFr()).append("\n")
+		.append(joiningCollection(getIngredients()))
+		.append("\n").append(getElements())
+		.append("\n").append(joiningCollection(getAdditifs()))
+		.append("\n").append(joiningCollection(getAllergenes()));
 
 		return produitString.toString();
 	}
@@ -171,3 +183,4 @@ public class Produit  {
 	}
 
 }
+

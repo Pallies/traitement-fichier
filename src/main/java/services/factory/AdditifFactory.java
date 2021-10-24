@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import models.Additif;
+import models.Descriptif;
 import utils.FilterNotNull;
 
 /**
@@ -16,7 +17,7 @@ import utils.FilterNotNull;
  * @author Yvan Palliès
  * Création de liste Additif
  */
-public class AdditifFactory implements Services<Stream<String>, List<Additif>> {
+public class AdditifFactory implements Services<Stream<String>, List<Descriptif>> {
 
 	/**
 	 * Builder.
@@ -25,12 +26,12 @@ public class AdditifFactory implements Services<Stream<String>, List<Additif>> {
 	 * @return the list
 	 */
 	@Override
-	public List<Additif> builder(Stream<String> data) {
+	public List<Descriptif> builder(Stream<String> data) {
 		String lineAdditif = data.collect(Collectors.joining());
 		
 //		un additif est toujours composé du préfix E
 		if (!lineAdditif.startsWith("E"))
-			return new ArrayList<Additif>();
+			return new ArrayList<Descriptif>();
 		
 		List<String> linesAdditifs = Arrays.asList(lineAdditif.replace(",", " ").split("E"));
 		

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import models.Descriptif;
 import models.Ingredient;
 
 /**
@@ -12,7 +13,7 @@ import models.Ingredient;
  * @author Yvan Palliès
  * Création d'une liste d'ingrédients
  */
-public class IngredientFactory implements Services<String,List<Ingredient>> {
+public class IngredientFactory implements Services<String,List<Descriptif>> {
 	
 	/**
 	 * Builder.
@@ -21,7 +22,7 @@ public class IngredientFactory implements Services<String,List<Ingredient>> {
 	 * @return liste formatté d'ingrédients
 	 */
 	@Override
-	public List<Ingredient> builder(String data) {
+	public List<Descriptif> builder(String data) {
 		return Arrays.asList(data.split(",")).stream()
 				.map(Ingredient::new)
 				.collect(Collectors.toList());

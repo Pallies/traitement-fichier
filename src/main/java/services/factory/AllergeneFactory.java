@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import models.Allergene;
+import models.Descriptif;
 import utils.FilterNotNull;
 
 /**
@@ -15,7 +17,7 @@ import utils.FilterNotNull;
  * @author Yvan Palliès
  * Création de liste Allergene
  */
-public class AllergeneFactory implements Services<Stream<String>,List<Allergene>> {
+public class AllergeneFactory implements Services<Stream<String>,List<Descriptif>> {
 
 	/**
 	 * Builder.
@@ -24,11 +26,11 @@ public class AllergeneFactory implements Services<Stream<String>,List<Allergene>
 	 * @return the list
 	 */
 	@Override
-	public List<Allergene> builder(Stream<String> data) {
+	public List<Descriptif> builder(Stream<String> data) {
 		String lineAllergene = data.collect(Collectors.joining());
 
 		if (!lineAllergene.contains("en:"))
-			return new ArrayList<Allergene>();
+			return new ArrayList<Descriptif>();
 		
 		List<String> linesAllergenes = Arrays.asList(lineAllergene.replace(",", " ").split("en:"));
 		return linesAllergenes.stream()
