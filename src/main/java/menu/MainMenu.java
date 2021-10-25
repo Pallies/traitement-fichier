@@ -45,6 +45,16 @@ public class MainMenu extends MenuService {
 			MenuService selectMarkCategorie = new SelectionMenu(produitMarkCategorie);
 			selectMarkCategorie.traiter(scanner);
 			break;
+		case 4:
+//			"| - 4. Afficher les produits avec le plus d'ingredients 
+			ProduitService produitStockAllergene=Stock.getInstance();
+			viewMain.affichageList(produitStockAllergene.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER));
+			break;
+		case 5:
+//			"| - 5. Afficher les produits avec le plus additifs
+			ProduitService produitStockAdditif=Stock.getInstance();
+			viewMain.affichageList(produitStockAdditif.selectionByAdditif(AffichageService.NB_PRODUIT_A_AFFICHER));
+			break;
 		default:
 			break;
 		}

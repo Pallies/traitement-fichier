@@ -28,7 +28,8 @@ import utils.SetInHashMap;
 public class Stock extends ProduitService {
 
 	/** The produits. */
-	private static List<Produit> produits=null;
+	private static List<Produit> produits = null;
+	private static Stock instance = null;
 
 	/**
 	 * #Constructor appel du Lecteur du fichier appel du formatteur de données
@@ -42,6 +43,12 @@ public class Stock extends ProduitService {
 		produits.addAll(fileFormat.builder(linesFile));
 	}
 
+	public static Stock getInstance() {
+		if (instance == null)
+			instance = new Stock();
+		return instance;
+	}
+
 	/**
 	 * Restitution de la lecture du fichier.
 	 *
@@ -49,7 +56,7 @@ public class Stock extends ProduitService {
 	 */
 	public static List<Produit> toList() {
 		if (produits == null)
-			new Stock();
+			instance = new Stock();
 		return produits.stream().collect(Collectors.toList());
 	}
 
@@ -99,10 +106,10 @@ public class Stock extends ProduitService {
 		Collections.sort(Stock.toList(), Comparator.comparing(Produit::getNutritionGradeFr));
 		return listSort.stream().limit(nb).collect(Collectors.toList());
 	}
-	
+
 	/**
-	 * Selection by nutri score F.
-	 * reversed list
+	 * Selection by nutri score F. reversed list
+	 * 
 	 * @param nb the nb
 	 * @return the list
 	 */
@@ -112,17 +119,24 @@ public class Stock extends ProduitService {
 		Collections.reverse(listSort);
 		return listSort;
 	}
+
 	/**
-	 * Selection by allergens.
-	 * trie en fonction des produits les plus allergènes
+	 * Selection by allergens. trie en fonction des produits les plus allergènes
+	 * 
 	 * @param nb the nb
 	 * @return the list
 	 */
 	@Override
 	public List<Produit> selectionByAllergens(int nb) {
-		Collections.sort(Stock.toList(),sortByNumberAllergens);
+		Collections.sort(Stock.toList(), Comparator.comparing(Produit::getAllergenesSize).reversed());
 		return Stock.toList().stream().limit(nb).collect(Collectors.toList());
 	}
+	@Override
+	public List<Produit> selectionByAdditif(int nb) {
+		Collections.sort(Stock.toList(), Comparator.comparing(Produit::getAdditifsSize));
+		return Stock.toList().stream().limit(nb).collect(Collectors.toList());
+	}
+
 }
 
 /**

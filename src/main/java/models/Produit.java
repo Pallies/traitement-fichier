@@ -63,7 +63,18 @@ public class Produit {
 		return list.stream().map(Descriptif::getNom).collect(Collectors.joining("\n "));
 	}
 
-	
+	/**
+	 * Gets the allergenes size.
+	 *
+	 * @return the allergenes size
+	 */
+	public int getAllergenesSize() {
+		return allergenes.size();
+	}
+
+	public int getAdditifsSize() {
+		return additifs.size();
+	}
 	/**
 	 * Getter.
 	 *

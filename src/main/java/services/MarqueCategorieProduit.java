@@ -72,7 +72,12 @@ public class MarqueCategorieProduit extends ProduitService implements Predicate<
 	 */
 	@Override
 	public List<Produit> selectionByAllergens(int nb) {
-		Collections.sort(list,sortByNumberAllergens);
+		Collections.sort(list,Comparator.comparing(Produit::getAllergenesSize));
+		return list.stream().limit(nb).collect(Collectors.toList());
+	}
+	@Override
+	public List<Produit> selectionByAdditif(int nb) {
+		Collections.sort(list, Comparator.comparing(Produit::getAdditifsSize));
 		return list.stream().limit(nb).collect(Collectors.toList());
 	}
 	/**

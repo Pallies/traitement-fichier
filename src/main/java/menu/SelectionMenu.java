@@ -29,12 +29,7 @@ public class SelectionMenu extends MenuService {
 			break;
 		case 3:
 //			"| - 3. Rechercher les plus Allergissants
-			break;
-		case 4:
-//			"| - 4. Afficher les produits avec le plus d'ingredients 
-			break;
-		case 5:
-//			"| - 5. Afficher les produits avec le plus additifs
+			viewSelection.affichageList(list.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER));
 			break;
 		default:
 			break;

@@ -66,7 +66,7 @@ public class CategorieProduit extends ProduitService implements Predicate<Produi
 	 */
 	@Override
 	public List<Produit> selectionByAllergens(int nb) {
-		Collections.sort(list,sortByNumberAllergens);
+		Collections.sort(list,Comparator.comparing(Produit::getAllergenesSize));
 		return list.stream().limit(nb).collect(Collectors.toList());
 	}
 	/**
@@ -78,6 +78,12 @@ public class CategorieProduit extends ProduitService implements Predicate<Produi
 	@Override
 	public boolean test(Produit produit) {
 		return categorie.getNom().equals(produit.getCategorie().getNom());
+	}
+
+	@Override
+	public List<Produit> selectionByAdditif(int nb) {
+		Collections.sort(list,Comparator.comparing(Produit::getAdditifsSize));
+		return list.stream().limit(nb).collect(Collectors.toList());
 	}
 
 
