@@ -25,7 +25,7 @@ public abstract class MenuService {
 			} catch (InputMismatchException e) {
 				affichageErreur();
 			}
-//			scanner.nextLine();
+			scanner.nextLine();
 //			Retour au menu pricipal
 			if (this instanceof SelectionMenu)
 				break;
@@ -42,7 +42,7 @@ public abstract class MenuService {
 			} catch (InputMismatchException e) {
 				affichageErreur(limit);
 			}
-//			scanner.nextLine();
+			scanner.nextLine();
 		} while (key < 0 || key > limit);
 
 		return map.get(key);

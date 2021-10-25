@@ -18,7 +18,9 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 
 	/** The marque. */
 	private Marque marque;
-
+	
+	/** The list. */
+	private List<Produit> list;
 	/**
 	 * Instantiates a new produit marque.
 	 *
@@ -27,7 +29,7 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 	public MarqueProduit(Marque marque, List<Produit> list) {
 		super();
 		this.marque = marque;
-		this.setProduits(list.stream().filter(this::test).collect(Collectors.toList()));
+		this.list=list.stream().filter(this::test).collect(Collectors.toList());
 	}
 
 	/**
@@ -38,8 +40,8 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 	 */
 	@Override
 	public List<Produit> selectionByNutriScoreA(int nb) {
-		Collections.sort(getProduits(), Comparator.comparing(Produit::getNutritionGradeFr));
-		return getProduits().stream().limit(nb).collect(Collectors.toList());
+		Collections.sort(list, Comparator.comparing(Produit::getNutritionGradeFr));
+		return list.stream().limit(nb).collect(Collectors.toList());
 	}
 
 	/**
@@ -53,6 +55,18 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 		List<Produit> orderList = selectionByNutriScoreA(nb);
 		Collections.reverse(orderList);
 		return orderList;
+	}
+
+	/**
+	 * Selection by allergens. trie en fonction des produits les plus allergènes
+	 * 
+	 * @param nb the nb
+	 * @return the list
+	 */
+	@Override
+	public List<Produit> selectionByAllergens(int nb) {
+		Collections.sort(list, sortByNumberAllergens);
+		return list.stream().limit(nb).collect(Collectors.toList());
 	}
 
 	/**

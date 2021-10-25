@@ -112,6 +112,17 @@ public class Stock extends ProduitService {
 		Collections.reverse(listSort);
 		return listSort;
 	}
+	/**
+	 * Selection by allergens.
+	 * trie en fonction des produits les plus allergènes
+	 * @param nb the nb
+	 * @return the list
+	 */
+	@Override
+	public List<Produit> selectionByAllergens(int nb) {
+		Collections.sort(Stock.toList(),sortByNumberAllergens);
+		return Stock.toList().stream().limit(nb).collect(Collectors.toList());
+	}
 }
 
 /**

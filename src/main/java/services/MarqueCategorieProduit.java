@@ -64,7 +64,17 @@ public class MarqueCategorieProduit extends ProduitService implements Predicate<
 		Collections.reverse(orderList);
 		return orderList;
 	}
-
+	/**
+	 * Selection by allergens.
+	 * trie en fonction des produits les plus allergènes
+	 * @param nb the nb
+	 * @return the list
+	 */
+	@Override
+	public List<Produit> selectionByAllergens(int nb) {
+		Collections.sort(list,sortByNumberAllergens);
+		return list.stream().limit(nb).collect(Collectors.toList());
+	}
 	/**
 	 * Predicate Test.
 	 * 
