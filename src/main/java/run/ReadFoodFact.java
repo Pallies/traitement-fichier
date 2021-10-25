@@ -9,32 +9,50 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import error.FilesError;
+
 /**
  * The Class ReadFoodFact.
  *
  * @author Yvan Palliès Lecture du fichier
  */
 public class ReadFoodFact {
-	
-	/**  emplacement du fichier source. */
-	private static final String FILE_OPENFOODFACT = "C:/Users/Peac178/Documents/dev/Diginamic/Exercices/traitement-fichier/src/main/resources/open-food-facts.csv";
 
+	/** emplacement du fichier source. */
+	private static final String FILE_OPENFOODFACT = "C:/Users/Peac178/Documents/dev/Diginamic/Exercices/traitement-fichier/src/main/resources/open-food-facts.csv";
+	
+	private Path path = Paths.get(FILE_OPENFOODFACT);
 	/**
-	 *  gestion de l'erreur
-	 *  gestion de la liste vide.
+	 * gestion de l'erreur gestion de la liste vide.
 	 *
 	 * @return List<String> lignes du fichier
+	 * @throws FilesError
 	 */
 	public List<String> open() {
 		List<String> fileList = Collections.emptyList();
+
 		try {
+			test();
 			fileList = extractLines();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			} catch (FilesError | IOException e) {
+				System.out.println(e.getMessage()+"\n Fermeture de l'pplication dû à la lecture de fichier");
+				System.exit(0);
+			} 
 		return fileList;
 	}
 
+	/**
+	 * Test.
+	 * teste si le fichier est accessible et peut-être lu
+	 * @return true, if successful
+	 * @throws FilesError 
+	 */
+	private void test() throws FilesError {
+		boolean isNotExist = !Files.isRegularFile(path);
+		boolean isNotRead = !Files.isReadable(path);
+		if(isNotExist || isNotRead)
+			throw new FilesError(isNotExist,path);
+	}
 	/**
 	 * Ouverture du fichier.
 	 *
@@ -42,8 +60,8 @@ public class ReadFoodFact {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private List<String> extractLines() throws IOException {
-		Path path = Paths.get(FILE_OPENFOODFACT);
-		List<String> file = Files.readAllLines(path,StandardCharsets.UTF_8);
+		List<String> file = Files.readAllLines(path, StandardCharsets.UTF_8);
 		return file.stream().skip(1).collect(Collectors.toList());
 	}
+
 }

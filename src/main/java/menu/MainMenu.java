@@ -77,4 +77,11 @@ public class MainMenu extends MenuService {
 		viewMain.affichageErreur(max);
 	}
 
+	/**Getter
+	 * @return the viewMain
+	 */
+	protected AffichageService getViewMain() {
+		return viewMain;
+	}
+
 }
