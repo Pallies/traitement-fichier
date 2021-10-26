@@ -17,10 +17,10 @@ public class AffichageSelection extends AffichageService {
 	public static final String CHOIX_3 = "| - 3. Rechercher les plus Allergissants                             |\n";
 
 	/** The Constant CHOIX_4. */
-	public static final String CHOIX_4 = "| - 4. Afficher les produits avec le plus d'ingredients              |\n";
+	public static final String CHOIX_4 = "| - 4. Rechercher les produits avec le plus additifs                   |\n";
 
 	/** The Constant CHOIX_5. */
-	public static final String CHOIX_5 = "| - 5. Afficher les produits avec le plus additifs                   |\n";
+	public static final String CHOIX_5 = "| - 5. Afficher les produits avec le plus d'ingredients              |\n";
 	/** The selection. */
 	private StringBuilder menuString = new StringBuilder();
 

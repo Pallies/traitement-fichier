@@ -72,8 +72,22 @@ public class Produit {
 		return allergenes.size();
 	}
 
+	/**
+	 * Gets the additifs size.
+	 *
+	 * @return the additifs size
+	 */
 	public int getAdditifsSize() {
 		return additifs.size();
+	}
+	
+	/**
+	 * Gets the igredients size.
+	 *
+	 * @return the igredients size
+	 */
+	public int getIgredientsSize() {
+		return ingredients.size();
 	}
 	/**
 	 * Getter.

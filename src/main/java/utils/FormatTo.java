@@ -44,7 +44,7 @@ public class FormatTo {
 		String mot;
 		if (nom.contains("-europeensans"))
 			mot = nom.substring(1, nom.indexOf("-"));
-		mot = nom.substring(1).toLowerCase().replace("œ", "oe");
+		mot = nom.substring(1).toLowerCase().replace("œ", "oe").replaceAll("De:", "").replaceAll("fr:", ",");
 		return concatString.append(letter).append(mot).toString();
 	}
 

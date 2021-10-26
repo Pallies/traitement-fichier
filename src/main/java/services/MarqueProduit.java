@@ -18,18 +18,19 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 
 	/** The marque. */
 	private Marque marque;
-	
+
 	/** The list. */
-	private List<Produit> list;
+	private List<Produit> produits;
+
 	/**
 	 * Instantiates a new produit marque.
 	 *
 	 * @param marque the marque
 	 */
-	public MarqueProduit(Marque marque, List<Produit> list) {
+	public MarqueProduit(Marque marque, List<Produit> produits) {
 		super();
 		this.marque = marque;
-		this.list=list.stream().filter(this::test).collect(Collectors.toList());
+		this.produits = produits.stream().filter(this::test).collect(Collectors.toList());
 	}
 
 	/**
@@ -40,8 +41,8 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 	 */
 	@Override
 	public List<Produit> selectionByNutriScoreA(int nb) {
-		Collections.sort(list, Comparator.comparing(Produit::getNutritionGradeFr));
-		return list.stream().limit(nb).collect(Collectors.toList());
+		Collections.sort(produits, Comparator.comparing(Produit::getNutritionGradeFr));
+		return produits.stream().limit(nb).collect(Collectors.toList());
 	}
 
 	/**
@@ -56,22 +57,29 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 		Collections.reverse(orderList);
 		return orderList;
 	}
-
 	/**
-	 * Selection by allergens. trie en fonction des produits les plus allergènes
-	 * 
+	 * Selection by allergens.
+	 * sélection des produits avec le plus d'ellergènes de la Marque
 	 * @param nb the nb
 	 * @return the list
 	 */
 	@Override
 	public List<Produit> selectionByAllergens(int nb) {
-		Collections.sort(list, Comparator.comparing(Produit::getAllergenesSize));
-		return list.stream().limit(nb).collect(Collectors.toList());
+		Collections.sort(produits, Comparator.comparing(Produit::getAllergenesSize).reversed());
+		return produits.stream().limit(nb).collect(Collectors.toList());
 	}
+
+
+	/**
+	 * Selection by additif.
+	 * Sélection des produits avec le plus d'additifs de la Marque
+	 * @param nb the nb
+	 * @return the list
+	 */
 	@Override
 	public List<Produit> selectionByAdditif(int nb) {
-		Collections.sort(list, Comparator.comparing(Produit::getAdditifsSize));
-		return list.stream().limit(nb).collect(Collectors.toList());
+		Collections.sort(produits, Comparator.comparing(Produit::getAdditifsSize).reversed());
+		return produits.stream().limit(nb).collect(Collectors.toList());
 	}
 	/**
 	 * @param produit the produit

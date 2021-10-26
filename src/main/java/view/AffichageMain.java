@@ -3,27 +3,36 @@ package view;
 /**
  * The Class AffichageMenu.
  *
- * @author Yvan Palliès
- * Gestion de l' affichage principale
+ * @author Yvan Palliès Gestion de l' affichage principale
  */
 public class AffichageMain extends AffichageService {
 	/** The Constant CHOIX_1. */
-	public static final String CHOIX_1 ="| - 1. Rechercher une Marque                                         |\n";
-	
+	public static final String CHOIX_1 = "| - 1. Rechercher une Marque                                         |\n";
+
 	/** The Constant CHOIX_2. */
-	public static final String CHOIX_2 ="| - 2. Rechercher une Catégorie                                      |\n";
-	
+	public static final String CHOIX_2 = "| - 2. Rechercher une Catégorie                                      |\n";
+
 	/** The Constant CHOIX_3. */
-	public static final String CHOIX_3 ="| - 3. Rechercher une Marque et une Catégorie                        |\n";
-	
+	public static final String CHOIX_3 = "| - 3. Rechercher une Marque et une Catégorie                        |\n";
+
 	/** The Constant CHOIX_4. */
-	public static final String CHOIX_4 ="| - 4. Afficher les allergènes les plus courants                     |\n";
-	
+	public static final String CHOIX_4 = "| - 4. Afficher les produits avec le plus d'allergènes               |\n";
+
 	/** The Constant CHOIX_5. */
-	public static final String CHOIX_5 ="| - 5. Afficher les additifs les plus courants                       |\n";
+	public static final String CHOIX_5 = "| - 5. Afficher les produits avec le plus additifs                   |\n";
+
+	/** The Constant CHOIX_6. */
+	public static final String CHOIX_6 = "| - 6. Afficher les produits avec le plus d'ingrédients              |\n";
+	
+	/** The Constant CHOIX_7. */
+	public static final String CHOIX_7 = "| - 7. Afficher les allergènes les plus courants                     |\n";
+
+	/** The Constant CHOIX_8. */
+	public static final String CHOIX_8 = "| - 8. Afficher les additifs les plus courants                       |\n";
+	
 	/** The mainString. */
 	private StringBuilder mainString = new StringBuilder();
-	
+
 	/**
 	 * Instantiates a new affichage menu.
 	 */
@@ -38,7 +47,7 @@ public class AffichageMain extends AffichageService {
 	public void menu() {
 		System.out.println(mainString.toString());
 	}
-	
+
 	/**
 	 * Construction de l'affichage.
 	 */
@@ -52,9 +61,12 @@ public class AffichageMain extends AffichageService {
 		.append(CHOIX_3)
 		.append(CHOIX_4)
 		.append(CHOIX_5)
+		.append(CHOIX_6)
+		.append(CHOIX_7)
+		.append(CHOIX_8)
 		.append(SPACE)
 		.append(QUITER)
 		.append(BORDER);
 	}
-	
+
 }

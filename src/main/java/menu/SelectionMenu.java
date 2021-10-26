@@ -21,15 +21,19 @@ public class SelectionMenu extends MenuService {
 		switch (key) {
 		case 1:
 //			"| - 1. Rechercher les meilleurs produits ( nutriScore A )
-			viewSelection.affichageList(list.selectionByNutriScoreA(AffichageService.NB_PRODUIT_A_AFFICHER));
+			viewSelection.affichageList(list.selectionByNutriScoreA(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
 		case 2:
 //			"| - 2. Rechercher les produits à éviter  ( nutriScore F )
-			viewSelection.affichageList(list.selectionByNutriScoreF(AffichageService.NB_PRODUIT_A_AFFICHER));
+			viewSelection.affichageList(list.selectionByNutriScoreF(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
 		case 3:
 //			"| - 3. Rechercher les plus Allergissants
-			viewSelection.affichageList(list.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER));
+			viewSelection.affichageList(list.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
+			break;
+		case 4:
+//			"| - 3. Rechercher avec le plus d'additif
+			viewSelection.affichageList(list.selectionByAdditif(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
 		default:
 			break;

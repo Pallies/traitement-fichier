@@ -46,14 +46,27 @@ public class MainMenu extends MenuService {
 			selectMarkCategorie.traiter(scanner);
 			break;
 		case 4:
-//			"| - 4. Afficher les produits avec le plus d'ingredients 
-			ProduitService produitStockAllergene=Stock.getInstance();
-			viewMain.affichageList(produitStockAllergene.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER));
+//			"| - 4. Afficher les produits avec le plus d'allergènes 
+			ProduitService produitStockAllergene = Stock.getInstance();
+			viewMain.affichageList(produitStockAllergene.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
 		case 5:
 //			"| - 5. Afficher les produits avec le plus additifs
-			ProduitService produitStockAdditif=Stock.getInstance();
-			viewMain.affichageList(produitStockAdditif.selectionByAdditif(AffichageService.NB_PRODUIT_A_AFFICHER));
+			ProduitService produitStockAdditif = Stock.getInstance();
+			viewMain.affichageList(produitStockAdditif.selectionByAdditif(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
+			break;
+//			| - 6. Afficher les produits avec le plus d'ingrédients
+		case 6:
+			ProduitService produitStockIngredient = Stock.getInstance();
+			viewMain.affichageList(produitStockIngredient.selectionByIngredients(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
+			break;
+		case 7:
+			ProduitService produitAllergens = Stock.getInstance();
+			viewMain.affichageList(produitAllergens.allergensCommun());
+			break;
+		case 8:
+			ProduitService produitAdditifs = Stock.getInstance();
+			viewMain.affichageList(produitAdditifs.additifsCommun());
 			break;
 		default:
 			break;
@@ -69,8 +82,7 @@ public class MainMenu extends MenuService {
 	}
 
 	/**
-	 * Affichage erreur.
-	 * pour la méthode traiter du menuService
+	 * Affichage erreur. pour la méthode traiter du menuService
 	 */
 	@Override
 	public void affichageErreur() {
@@ -78,8 +90,8 @@ public class MainMenu extends MenuService {
 	}
 
 	/**
-	 * Affichage erreur.
-	 * pour la méthode traitement du menuService
+	 * Affichage erreur. pour la méthode traitement du menuService
+	 * 
 	 * @param max the max
 	 */
 	@Override
@@ -87,7 +99,9 @@ public class MainMenu extends MenuService {
 		viewMain.affichageErreur(max);
 	}
 
-	/**Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the viewMain
 	 */
 	protected AffichageService getViewMain() {

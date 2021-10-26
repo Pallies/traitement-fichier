@@ -120,23 +120,6 @@ public class Stock extends ProduitService {
 		return listSort;
 	}
 
-	/**
-	 * Selection by allergens. trie en fonction des produits les plus allergènes
-	 * 
-	 * @param nb the nb
-	 * @return the list
-	 */
-	@Override
-	public List<Produit> selectionByAllergens(int nb) {
-		Collections.sort(Stock.toList(), Comparator.comparing(Produit::getAllergenesSize).reversed());
-		return Stock.toList().stream().limit(nb).collect(Collectors.toList());
-	}
-	@Override
-	public List<Produit> selectionByAdditif(int nb) {
-		Collections.sort(Stock.toList(), Comparator.comparing(Produit::getAdditifsSize));
-		return Stock.toList().stream().limit(nb).collect(Collectors.toList());
-	}
-
 }
 
 /**

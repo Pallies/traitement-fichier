@@ -3,7 +3,6 @@ package view;
 import java.util.List;
 
 import models.Marque;
-import models.Produit;
 import services.Stock;
 
 /**
@@ -14,8 +13,8 @@ import services.Stock;
  */
 public abstract class AffichageService {
 
-	/**  The Constant NB_PRODUIT_AFFICHE. */
-	public static final int NB_PRODUIT_A_AFFICHER = 10;
+	/** The Constant NB_PRODUIT_AFFICHE. */
+	public static final int NB_PRODUIT_A_AFFICHER_MAX = 10;
 	/** The Constant HEADER_1. */
 	public static final String HEADER_1 = "                       __--  MENU  --__                             \n";
 
@@ -34,10 +33,10 @@ public abstract class AffichageService {
 
 	/** The Constant ERROR. */
 	public static final String ERROR_START = "| - Erreur de saisie entrez un chiffre";
-	
+
 	/** The Constant ERROR_MIDDLE. */
 	public static final String ERROR_MIDDLE = " entre 1 et ";
-	
+
 	/** The Constant ERROR_END. */
 	public static final String ERROR_END = "|\n";
 
@@ -56,31 +55,25 @@ public abstract class AffichageService {
 	 *
 	 * @param list the list
 	 */
-	public void affichageList(List<Produit> list) {
+	public <T> void affichageList(List<T> list) {
 		list.forEach(System.out::println);
 	}
 
 	/**
-	 * Affichage erreur.
-	 * composition d'un message d'erreur spécifique
-	 * indiquant l'intervalle du choix d'entrée
+	 * Affichage erreur. composition d'un message d'erreur spécifique indiquant
+	 * l'intervalle du choix d'entrée
+	 * 
 	 * @param max the max
 	 */
 	public void affichageErreur(int max) {
 		int nbLength = String.valueOf(max).length();
 		String errorMiddle = new String(new char[19 - nbLength]).replace("\0", " ");
 		StringBuilder serviceString = new StringBuilder();
-		serviceString.append(BORDER)
-		.append(SPACE)
-		.append(ERROR_START)
-		.append(ERROR_MIDDLE)
-		.append(max)
-		.append(errorMiddle)
-		.append(ERROR_END)
-		.append(SPACE)
-		.append(BORDER);
+		serviceString.append(BORDER).append(SPACE).append(ERROR_START).append(ERROR_MIDDLE).append(max)
+				.append(errorMiddle).append(ERROR_END).append(SPACE).append(BORDER);
 		System.out.println(serviceString.toString());
 	}
+
 	/**
 	 * Affichage erreur.
 	 *
@@ -88,15 +81,11 @@ public abstract class AffichageService {
 	public void affichageErreur() {
 		String errorMiddle = new String(new char[31]).replace("\0", " ");
 		StringBuilder serviceString = new StringBuilder();
-		serviceString.append(BORDER)
-		.append(SPACE)
-		.append(ERROR_START)
-		.append(errorMiddle)
-		.append(ERROR_END)
-		.append(SPACE)
-		.append(BORDER);
+		serviceString.append(BORDER).append(SPACE).append(ERROR_START).append(errorMiddle).append(ERROR_END)
+				.append(SPACE).append(BORDER);
 		System.out.println(serviceString.toString());
 	}
+
 	/**
 	 * Affichage list marque.
 	 */
