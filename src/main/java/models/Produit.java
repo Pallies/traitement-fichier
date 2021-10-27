@@ -80,7 +80,6 @@ public class Produit {
 	public int getAdditifsSize() {
 		return additifs.size();
 	}
-	
 	/**
 	 * Gets the igredients size.
 	 *

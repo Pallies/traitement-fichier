@@ -9,21 +9,8 @@ import java.util.function.Predicate;
 
 import models.Produit;
 
-public class AdditifCommons implements Consumer<Produit>, Predicate<Produit>, Function<Entry<String, Integer>, String>,
+public class AdditifCommon extends FilterCommon implements Consumer<Produit>, Predicate<Produit>, Function<Entry<String, Integer>, String>,
 		Comparator<Entry<String, Integer>> {
-
-	private HashMap<String, Integer> additifsCount = new HashMap<>();
-
-	@Override
-	public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-		return o2.getValue() - o1.getValue();
-	}
-
-	@Override
-	public String apply(Entry<String, Integer> hashmap) {
-		StringBuilder builderString = new StringBuilder();
-		return builderString.append(hashmap.getKey()).append(" => ").append(hashmap.getValue()).toString();
-	}
 
 	@Override
 	public boolean test(Produit produit) {
@@ -35,7 +22,7 @@ public class AdditifCommons implements Consumer<Produit>, Predicate<Produit>, Fu
 		produit.getAdditifs().forEach(additif->{
 			String[] additifsName =additif.getNom().replaceAll("Additif ", "").split(",");
 			for(String name : additifsName) {
-				additifsCount.merge(name.trim().replaceAll("[^E[0-9A-Z]]{0,4} -", " - "), 1, Integer::sum);
+				hahsMapCount.merge(name.trim().replaceAll("[^E[0-9A-Z]]{0,4} -", " - "), 1, Integer::sum);
 			}
 		});
 	}
@@ -44,7 +31,7 @@ public class AdditifCommons implements Consumer<Produit>, Predicate<Produit>, Fu
 	 * @return the additifsCount
 	 */
 	public HashMap<String, Integer> getAdditifsCount() {
-		return additifsCount;
+		return hahsMapCount;
 	}
 
 }

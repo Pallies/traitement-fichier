@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import models.Produit;
-import utils.AdditifCommons;
-import utils.AllergenCommons;
+import utils.AdditifCommon;
+import utils.AllergenCommon;
 
 /**
  * The Class ProduitService.
@@ -61,33 +61,30 @@ public abstract class ProduitService {
 	}
 
 	/**
-	 * Allergens commun.
-	 * Sélection des allergènes les plus courant
+	 * Allergens commun. Sélection des allergènes les plus courant
+	 * 
 	 * @return the list
 	 */
 	public List<String> allergensCommun() {
 		List<Produit> produits = Stock.toList();
-		AllergenCommons allergenUtils =new AllergenCommons();
+		AllergenCommon allergenUtils = new AllergenCommon();
 
 		produits.stream().filter(allergenUtils).forEach(allergenUtils);
-		return allergenUtils.getAllergensCount().entrySet().stream()
-				.sorted(allergenUtils)
-				.map(allergenUtils)
+		return allergenUtils.getHahsMapCount().entrySet().stream().sorted(allergenUtils).map(allergenUtils)
 				.collect(Collectors.toList());
 	}
+
 	/**
-	 * Allergens commun.
-	 * Sélection des allergènes les plus courant
+	 * Additif commun. Sélection des allergènes les plus courant
+	 * 
 	 * @return the list
 	 */
 	public List<String> additifsCommun() {
 		List<Produit> produits = Stock.toList();
-		AdditifCommons additifUtils =new AdditifCommons();
+		AdditifCommon additifUtils = new AdditifCommon();
 
 		produits.stream().filter(additifUtils).forEach(additifUtils);
-		return additifUtils.getAdditifsCount().entrySet().stream()
-				.sorted(additifUtils)
-				.map(additifUtils)
+		return additifUtils.getHahsMapCount().entrySet().stream().sorted(additifUtils).map(additifUtils)
 				.collect(Collectors.toList());
 	}
 }
