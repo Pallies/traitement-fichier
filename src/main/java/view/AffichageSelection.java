@@ -3,7 +3,7 @@ package view;
 /**
  * The Class AffichageMenu.
  *
- * @author Yvan Palliès Gestion de l' affichage principale
+ * Gestion de l' affichage principale
  */
 public class AffichageSelection extends AffichageService {
 

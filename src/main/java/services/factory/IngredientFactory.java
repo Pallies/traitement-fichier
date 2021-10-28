@@ -10,7 +10,6 @@ import models.Ingredient;
 /**
  * Class servant à la fabrication d'un produit.
  *
- * @author Yvan Palliès
  * Création d'une liste d'ingrédients
  */
 public class IngredientFactory implements Services<String,List<Descriptif>> {

@@ -1,8 +1,15 @@
 package utils;
 
+
 /**
  * The Class Format. formatage des nom des éléments trouver dans la liste
  * utilitaire static pour chaque élément de produit
+ * {@link Produit}
+ * {@link Marque}
+ * {@link Categorie}
+ * {@link Ingredient}
+ * {@link Additif}
+ * {@link Allergene}
  */
 public class FormatTo {
 

@@ -14,7 +14,7 @@ import error.FilesError;
 /**
  * The Class ReadFoodFact.
  *
- * @author Yvan Palliès Lecture du fichier
+ * Lecture du fichier
  */
 public class ReadFoodFact {
 

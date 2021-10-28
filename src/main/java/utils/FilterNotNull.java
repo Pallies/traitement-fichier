@@ -5,9 +5,10 @@ import java.util.function.Predicate;
 /**
  * The Class FilterNotNull.
  *
- * @author Yvan Palliès
  * Class de filtrage
  * exclu les types String de valeur null ou ""
+ * {@link AdditifFactory}
+ * {@link AllergeneFactory}
  */
 public class FilterNotNull implements Predicate<String> {
 

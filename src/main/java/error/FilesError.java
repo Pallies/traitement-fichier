@@ -9,18 +9,24 @@ import java.nio.file.Path;
  */
 public class FilesError extends Exception {
 
-	/**
-	 * 
-	 */
+
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 2514747614181276666L;
 	
 
+	/**
+	 * #Construtor
+	 * Instantiates a new files error.
+	 *
+	 * @param isExist the is exist
+	 * @param path the path
+	 */
 	public FilesError(boolean isExist,Path path) {
 		super(message(isExist,path));
 	}
 
 	/**
-	 * Message.
+	 * création du Message.
 	 *
 	 * @param isNotExist the is not exist
 	 * @return the string

@@ -13,7 +13,7 @@ import models.Produit;
 /**
  * Class servant à la fabrication d'un produit.
  *
- * @author Yvan Palliès Création d'un produit
+ * Création d'un produit
  */
 public class ProductFactory implements Services<List<String>, Produit> {
 

@@ -12,7 +12,7 @@ import models.Produit;
 /**
  * The Class ProduitMarque.
  *
- * @author Yvan Palliès Création de liste à partir d'une marque
+ * Création de liste à partir d'une marque
  */
 public class MarqueProduit extends ProduitService implements Predicate<Produit> {
 

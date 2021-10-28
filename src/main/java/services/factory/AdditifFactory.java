@@ -14,14 +14,13 @@ import utils.FilterNotNull;
 /**
  * Class servant à la fabrication d'un produit.
  *
- * @author Yvan Palliès
  * Création de liste Additif
  */
 public class AdditifFactory implements Services<Stream<String>, List<Descriptif>> {
 
 	/**
 	 * Builder.
-	 *
+	 * 
 	 * @param data the data
 	 * @return the list
 	 */

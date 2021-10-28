@@ -9,14 +9,21 @@ import java.util.function.Predicate;
 
 import models.Produit;
 
+/**
+ * The Class AdditifCommon.
+ * prend en charge la création du hashMap -> forEach()
+ * prend en charge la filtration des listes descriptives vides -> filter()
+ * {@link ProduitService}
+ */
 public class AdditifCommon extends FilterCommon implements Consumer<Produit>, Predicate<Produit>, Function<Entry<String, Integer>, String>,
 		Comparator<Entry<String, Integer>> {
 
-	@Override
-	public boolean test(Produit produit) {
-		return produit.getAdditifsSize() != 0;
-	}
 
+	/**
+	 * Accept.
+	 * addition les valeurs déja présent dans un hashMap
+	 * @param produit the produit
+	 */
 	@Override
 	public void accept(Produit produit) {
 		produit.getAdditifs().forEach(additif->{
@@ -25,6 +32,17 @@ public class AdditifCommon extends FilterCommon implements Consumer<Produit>, Pr
 				hahsMapCount.merge(name.trim().replaceAll("[^E[0-9A-Z]]{0,4} -", " - "), 1, Integer::sum);
 			}
 		});
+	}
+
+	/**
+	 * Test. filtre les produits sans additif
+	 *
+	 * @param produit the produit
+	 * @return true, if successful
+	 */
+	@Override
+	public boolean test(Produit produit) {
+		return produit.getAdditifsSize() != 0;
 	}
 
 	/**Getter

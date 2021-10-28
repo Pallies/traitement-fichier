@@ -6,6 +6,11 @@ import services.ProduitService;
 import view.AffichageSelection;
 import view.AffichageService;
 
+/**
+ * The Class SelectionMenu.
+ * choix de sélection suite à l'affichage du menu de sélection
+ * {@link AffichageSelection}
+ */
 public class SelectionMenu extends MenuService {
 
 	private AffichageService viewSelection;

@@ -3,7 +3,7 @@ package models;
 /**
  * The Class Ingredient.
  *
- * @author Yvan Palliès Les Ingrédients du produit
+ * Les Ingrédients du produit
  */
 public class Ingredient extends Descriptif {
 

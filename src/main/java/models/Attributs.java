@@ -5,7 +5,6 @@ package models;
  * qui se trouve dans les produits
  * comparaison pour un poids de produit de .
  *
- * @author Yvan Palliès
  */
 public enum Attributs {
 	

@@ -6,6 +6,7 @@ import menu.MainMenu;
 
 /**
  * The Class ApplicationOpenFoodFacts.
+ * Class principal : début du programme
  */
 public class ApplicationOpenFoodFacts {
 

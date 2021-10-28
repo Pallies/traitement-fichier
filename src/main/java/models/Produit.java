@@ -59,6 +59,13 @@ public class Produit {
 		this.additifs = additifs;
 	}
 
+	/**
+	 * Joining collection.
+	 * permet l'affichage des listes qui compose un produit
+	 * sur plusieurs lignes
+	 * @param list the list
+	 * @return the string
+	 */
 	public  String joiningCollection(List<Descriptif> list) {
 		return list.stream().map(Descriptif::getNom).collect(Collectors.joining("\n "));
 	}

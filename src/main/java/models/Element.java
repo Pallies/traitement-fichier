@@ -6,7 +6,6 @@ import java.util.Map.Entry;
 /**
  * The Class Element.
  *
- * @author Yvan Palliès
  * référence pour 100Gr
  * de quantité d'élément 
  * pour un attribut Naturel donné

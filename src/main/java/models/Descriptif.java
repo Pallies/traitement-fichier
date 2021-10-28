@@ -3,7 +3,7 @@ package models;
 /**
  * The Class Descriptif.
  *
- * @author Yvan Palliès Nom d'une Marque / d'une Categorie Nom d'un Ingrédient /
+ * Nom d'une Marque / d'une Categorie Nom d'un Ingrédient /
  *         d'un Allergene / d'un Additif
  */
 public abstract class Descriptif {

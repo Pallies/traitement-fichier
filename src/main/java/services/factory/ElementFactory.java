@@ -11,7 +11,6 @@ import models.Element;
 /**
  * Class servant à la fabrication d'un produit.
  *
- * @author Yvan Palliès
  * Création de liste éléments
  * Element => HashMap<String, Double>
  */

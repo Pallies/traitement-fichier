@@ -14,7 +14,6 @@ import utils.FilterNotNull;
 /**
  * Class servant à la fabrication d'un produit.
  *
- * @author Yvan Palliès
  * Création de liste Allergene
  */
 public class AllergeneFactory implements Services<Stream<String>,List<Descriptif>> {

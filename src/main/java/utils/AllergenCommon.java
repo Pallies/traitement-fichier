@@ -7,9 +7,20 @@ import java.util.function.Predicate;
 import models.Descriptif;
 import models.Produit;
 
+/**
+ * The Class AllergenCommon.
+ * prend en charge la création du hashMap -> forEach()
+ * prend en charge la filtration des listes descriptives vides -> filter()
+ * {@link ProduitService}
+ */
 public class AllergenCommon extends FilterCommon implements Predicate<Produit>, Consumer<Produit>{
 
 
+	/**
+	 * Accept.
+	 * addition les valeurs déja présent dans un hashMap
+	 * @param produit the produit
+	 */
 	@Override
 	public void accept(Produit produit) {
 		List<Descriptif> allergens = produit.getAllergenes();

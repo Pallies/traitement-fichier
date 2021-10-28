@@ -8,7 +8,6 @@ import models.Produit;
 /**
  * Class servant à la fabrication d'un produit.
  *
- * @author Yvan Palliès
  */
 public class FormatFile implements Services<List<String>, List<Produit>> {
 

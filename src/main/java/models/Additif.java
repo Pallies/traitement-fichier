@@ -1,5 +1,7 @@
 package models;
 
+import utils.FormatTo;
+
 /**
  * The Class Additif.
  */
@@ -11,7 +13,7 @@ public class Additif extends Descriptif {
 	 * @param nom the nom
 	 */
 	public Additif(String nom) {
-		super(nom);
+		super(FormatTo.nom(nom));
 	}
 
 	/**

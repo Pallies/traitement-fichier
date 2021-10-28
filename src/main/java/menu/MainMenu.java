@@ -12,6 +12,11 @@ import services.Stock;
 import view.AffichageMain;
 import view.AffichageService;
 
+/**
+ * The Class MainMenu.
+ * choix de sélection suite à l'affichage du menu principal
+ * {@link AffichageMain}
+ */
 public class MainMenu extends MenuService {
 
 	private AffichageService viewMain;
@@ -20,6 +25,7 @@ public class MainMenu extends MenuService {
 	public void choixUser(Scanner scanner, int key) {
 
 		switch (key) {
+//			"| - 1. Rechercher une Marque
 		case 1:
 			viewMain.affichageListMarque();
 			String nomMarque = traitement(scanner, Stock.listingMarque());
@@ -27,6 +33,7 @@ public class MainMenu extends MenuService {
 			MenuService selectMarque = new SelectionMenu(produitMarque);
 			selectMarque.traiter(scanner);
 			break;
+//			"| - 2. Rechercher une Catégorie
 		case 2:
 			viewMain.affichageListCategorie();
 			String nomCategorie = traitement(scanner, Stock.listingCategorie());
@@ -34,6 +41,7 @@ public class MainMenu extends MenuService {
 			MenuService selectCategorie = new SelectionMenu(produitCategorie);
 			selectCategorie.traiter(scanner);
 			break;
+//			"| - 3. Rechercher une Marque et une Catégorie
 		case 3:
 			viewMain.affichageListMarque();
 			String nomMark = traitement(scanner, Stock.listingMarque());
@@ -45,25 +53,27 @@ public class MainMenu extends MenuService {
 			MenuService selectMarkCategorie = new SelectionMenu(produitMarkCategorie);
 			selectMarkCategorie.traiter(scanner);
 			break;
-		case 4:
 //			"| - 4. Afficher les produits avec le plus d'allergènes 
+		case 4:
 			ProduitService produitStockAllergene = Stock.getInstance();
 			viewMain.affichageList(produitStockAllergene.selectionByAllergens(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
-		case 5:
 //			"| - 5. Afficher les produits avec le plus additifs
+		case 5:
 			ProduitService produitStockAdditif = Stock.getInstance();
 			viewMain.affichageList(produitStockAdditif.selectionByAdditif(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
-//			| - 6. Afficher les produits avec le plus d'ingrédients
+//			"| - 6. Afficher les produits avec le plus d'ingrédients
 		case 6:
 			ProduitService produitStockIngredient = Stock.getInstance();
 			viewMain.affichageList(produitStockIngredient.selectionByIngredients(AffichageService.NB_PRODUIT_A_AFFICHER_MAX));
 			break;
+//			"| - 7. Afficher les allergènes les plus courants 
 		case 7:
 			ProduitService produitAllergens = Stock.getInstance();
 			viewMain.affichageList(produitAllergens.allergensCommun());
 			break;
+//			"| - 8. Afficher les additifs les plus courants
 		case 8:
 			ProduitService produitAdditifs = Stock.getInstance();
 			viewMain.affichageList(produitAdditifs.additifsCommun());

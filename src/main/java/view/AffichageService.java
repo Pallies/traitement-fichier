@@ -8,7 +8,7 @@ import services.Stock;
 /**
  * The Class AffichageMain.
  *
- * @author Yvan Palliès Aide à l'affichage des menus stockage des constantes
+ * Aide à l'affichage des menus stockage des constantes
  *         d'affichage
  */
 public abstract class AffichageService {

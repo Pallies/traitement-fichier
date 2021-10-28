@@ -12,7 +12,6 @@ import models.Produit;
 /**
  * The Class ProduitCategorie. création d'une liste à partir d'une Catégorie
  *
- * @author Yvan Palliès
  */
 public class CategorieProduit extends ProduitService implements Predicate<Produit> {
 

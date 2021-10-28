@@ -5,7 +5,7 @@ import utils.FormatTo;
 /**
  * The Class Marque.
  *
- * @author Yvan Palliès Indique la Marque du produit
+ * Indique la Marque du produit
  */
 public class Marque extends Descriptif {
 

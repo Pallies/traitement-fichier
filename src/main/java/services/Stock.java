@@ -19,7 +19,6 @@ import utils.SetInHashMap;
 /**
  * The Class Stock.
  *
- * @author Yvan Palliès
  * @Singleton Class instanciée une seul fois pour la lecture du fichier
  *            OpenFoodFact
  * 

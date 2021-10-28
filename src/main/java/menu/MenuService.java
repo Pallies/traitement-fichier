@@ -7,12 +7,16 @@ import java.util.Scanner;
 
 /**
  * The Class MenuService.
+ * prend en charge la saisie clavier de l'utilisateur
+ * extention de class
+ * MainMenu
+ * SelectionMenu
  */
 public abstract class MenuService {
 
 	/**
 	 * Traiter.
-	 *
+	 * sélectionne le menu choisi
 	 * @param scanner the scanner
 	 */
 	public void traiter(Scanner scanner) {
@@ -33,6 +37,13 @@ public abstract class MenuService {
 
 	}
 
+	/**
+	 * Traitement.
+	 * sélectionne le produit choisi
+	 * @param scanner the scanner
+	 * @param map the map
+	 * @return the string
+	 */
 	public String traitement(Scanner scanner, Map<Integer, String> map) {
 		int limit = map.size();
 		int key = limit + 1;
