@@ -23,7 +23,17 @@ public class Categorie extends Descriptif{
 	 */
 	@Override
 	public String toString() {
-		return "Categorie " + getNom() ;
+		return "Catégorie " + getNom() ;
+	}
+	
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
+	@Override
+	public int hashCode() {
+		return super.hashCode();
 	}
 	
 	/**
@@ -38,7 +48,6 @@ public class Categorie extends Descriptif{
 			return false;
 		Categorie objCategorie = (Categorie) obj;
 		return objCategorie.getNom().equals(this.getNom());
-
 	}
 
 	

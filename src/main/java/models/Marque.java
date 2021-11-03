@@ -1,7 +1,5 @@
 package models;
 
-import utils.FormatTo;
-
 /**
  * The Class Marque.
  *
@@ -15,7 +13,7 @@ public class Marque extends Descriptif {
 	 * @param nom the nom
 	 */
 	public Marque(String nom) {
-		super(FormatTo.nom(nom));
+		super(nom);
 	}
 
 

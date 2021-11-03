@@ -23,10 +23,10 @@ public class Produit {
 	/** nutri Score note de A<->F. */
 	private String nutritionGradeFr;
 
-	/** ingrédients dans le produit. */
+	/** ingrÃ©dients dans le produit. */
 	private List<Descriptif> ingredients;
 
-	/** quantité pour chaque élement pour 100g. */
+	/** quantitÃ© pour chaque ï¿½lement pour 100g. */
 	private List<Element> elements;
 
 	/** list d'allergenes. */

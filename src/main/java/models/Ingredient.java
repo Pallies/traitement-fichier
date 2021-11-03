@@ -35,7 +35,7 @@ public class Ingredient extends Descriptif {
 	@Override
 	public String toString() {
 		StringBuilder builderString = new StringBuilder();
-		return builderString.append("Ingredient ").append(getNom()).toString();
+		return builderString.append("Ingrédient ").append(getNom()).toString();
 	}
 
 }
