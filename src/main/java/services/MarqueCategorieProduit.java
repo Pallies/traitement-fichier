@@ -11,10 +11,9 @@ import models.Marque;
 import models.Produit;
 
 /**
- * The Class ProduitCategorieMarque. cr√©ation d'une liste √† partir d'une
- * Cat√©gorie et d'une marque
+ * The Class ProduitCategorieMarque. crÈation d'une liste √† partir d'une
+ * CatÈgorie et d'une marque
  * 
- * @author Yvan Palli√®s
  */
 public class MarqueCategorieProduit extends ProduitService implements Predicate<Produit> {
 
@@ -66,7 +65,7 @@ public class MarqueCategorieProduit extends ProduitService implements Predicate<
 	}
 	/**
 	 * Selection by allergens.
-	 * s√©lection des produits avec le plus d'ellerg√®nes de la Cat√©gorie
+	 * sÈlection des produits avec le plus d'ellerg√®nes de la CatÈgorie
 	 * @param nb the nb
 	 * @return the list produits
 	 */
@@ -79,7 +78,7 @@ public class MarqueCategorieProduit extends ProduitService implements Predicate<
 
 	/**
 	 * Selection by additif.
-	 * S√©lection des produits avec le plus d'additifs de la Cat√©gorie
+	 * SÈlection des produits avec le plus d'additifs de la CatÈgorie
 	 * @param nb the nb
 	 * @return the list produits
 	 */

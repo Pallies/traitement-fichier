@@ -10,7 +10,7 @@ import models.Categorie;
 import models.Produit;
 
 /**
- * The Class ProduitCategorie. crÃ©ation d'une liste Ã  partir d'une CatÃ©gorie
+ * The Class ProduitCategorie. création d'une liste Ã  partir d'une Catégorie
  *
  */
 public class CategorieProduit extends ProduitService implements Predicate<Produit> {
@@ -58,7 +58,7 @@ public class CategorieProduit extends ProduitService implements Predicate<Produi
 	}
 	/**
 	 * Selection by allergens.
-	 * sÃ©lection des produits avec le plus d'ellergÃ¨nes de la CatÃ©gorie
+	 * sélection des produits avec le plus d'ellergènes de la Catégorie
 	 * @param nb the nb
 	 * @return the list produits
 	 */
@@ -71,7 +71,7 @@ public class CategorieProduit extends ProduitService implements Predicate<Produi
 
 	/**
 	 * Selection by additif.
-	 * SÃ©lection des produits avec le plus d'additifs de la CatÃ©gorie
+	 * Sélection des produits avec le plus d'additifs de la Catégorie
 	 * @param nb the nb
 	 * @return the list produits
 	 */

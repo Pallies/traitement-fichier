@@ -25,7 +25,7 @@ public abstract class ProduitService {
 	public abstract List<Produit> selectionByNutriScoreF(int nb);
 
 	/**
-	 * Selection by allergens. s√©lection des produits avec le plus d'ellerg√®nes
+	 * Selection by allergens. sÈlection des produits avec le plus d'ellerg√®nes
 	 * 
 	 * @param nb the nb
 	 * @return the list
@@ -37,7 +37,7 @@ public abstract class ProduitService {
 	}
 
 	/**
-	 * Selection by additif. S√©lection des produits avec le plus d'additifs
+	 * Selection by additif. SÈlection des produits avec le plus d'additifs
 	 * 
 	 * @param nb the nb
 	 * @return the list
@@ -49,7 +49,7 @@ public abstract class ProduitService {
 	}
 
 	/**
-	 * Selection by ingredients. S√©lection des produits avec le plus d'ingr√©dients
+	 * Selection by ingredients. SÈlection des produits avec le plus d'ingrÈdients
 	 * 
 	 * @param nb the nb
 	 * @return the list
@@ -61,7 +61,7 @@ public abstract class ProduitService {
 	}
 
 	/**
-	 * Allergens commun. S√©lection des allerg√®nes les plus courant
+	 * Allergens commun. SÈlection des allergËnes les plus courant
 	 * 
 	 * @return the list
 	 */
@@ -75,7 +75,7 @@ public abstract class ProduitService {
 	}
 
 	/**
-	 * Additif commun. S√©lection des allerg√®nes les plus courant
+	 * Additif commun. SÈlection des allergËnes les plus courant
 	 * 
 	 * @return the list
 	 */

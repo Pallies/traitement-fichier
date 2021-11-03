@@ -12,7 +12,7 @@ import models.Produit;
 /**
  * The Class ProduitMarque.
  *
- * Création de liste à partir d'une marque
+ * Cr�ation de liste à partir d'une marque
  */
 public class MarqueProduit extends ProduitService implements Predicate<Produit> {
 
@@ -59,7 +59,7 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 	}
 	/**
 	 * Selection by allergens.
-	 * sélection des produits avec le plus d'ellergènes de la Marque
+	 * s�lection des produits avec le plus d'ellergènes de la Marque
 	 * @param nb the nb
 	 * @return the list
 	 */
@@ -72,7 +72,7 @@ public class MarqueProduit extends ProduitService implements Predicate<Produit> 
 
 	/**
 	 * Selection by additif.
-	 * Sélection des produits avec le plus d'additifs de la Marque
+	 * S�lection des produits avec le plus d'additifs de la Marque
 	 * @param nb the nb
 	 * @return the list
 	 */

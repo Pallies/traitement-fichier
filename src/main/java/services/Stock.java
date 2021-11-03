@@ -19,10 +19,10 @@ import utils.SetInHashMap;
 /**
  * The Class Stock.
  *
- * @Singleton Class instanciÃ©e une seul fois pour la lecture du fichier
+ * @Singleton Class instanciée une seul fois pour la lecture du fichier
  *            OpenFoodFact
  * 
- *            la classe ne peut pas Ãªtre instanciÃ©
+ *            la classe ne peut pas être instancié
  */
 public class Stock extends ProduitService {
 
@@ -31,7 +31,7 @@ public class Stock extends ProduitService {
 	private static Stock instance = null;
 
 	/**
-	 * #Constructor appel du Lecteur du fichier appel du formatteur de donnÃ©es
+	 * #Constructor appel du Lecteur du fichier appel du formatteur de données
 	 * constitution de la liste Produit.
 	 */
 	private Stock() {
@@ -82,7 +82,7 @@ public class Stock extends ProduitService {
 	}
 
 	/**
-	 * Listing marque categorie. listing gÃ©nÃ©rÃ© Ã  la suite du choix de la marque
+	 * Listing marque categorie. listing généré Ã  la suite du choix de la marque
 	 * 
 	 * @param marque the marque
 	 * @return the map
@@ -122,8 +122,8 @@ public class Stock extends ProduitService {
 }
 
 /**
- * The Class FilterMarque. ne concerne que la mÃ©thode listingMarqueCategorie et
- * n'a pas vocation Ã  Ãªtre externalisÃ©e
+ * The Class FilterMarque. ne concerne que la méthode listingMarqueCategorie et
+ * n'a pas vocation Ã  Ãªtre externalisée
  */
 class FilterMarque implements Predicate<Produit> {
 
