@@ -13,7 +13,6 @@ import services.factory.ProductFactory;
 public class ProduitTest {
 
 	private static final String LINE = "Aliments et boissons à base de végétaux|Auchan|Soja Cuisine 5%|a|jus de _soja_ 95 %, huile de tournesol, sucre, émulsifiant : lécithine de _soja_, épaississants : gomme xanthane, carraghénanes.|285|5|1.9|0.5|3.1|0.04|||||||||||||||||0|en:soybeans|E322 - Lécithines,E322i - Lécithine,E407 - Carraghénanes,E415 - Gomme xanthane|";
-//	"|285|5|1.9|0.5|3.1|0.04|||||||||||||||||0|";
 
 	@Test
 	public void test_Produit() {
